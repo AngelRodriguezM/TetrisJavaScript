@@ -56,6 +56,53 @@ function countTo10() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    // dragwindow
+    const draggableWindow = document.getElementById('gamewindow');
+    let offsetX = 0, offsetY = 0, isDragging = false;
+
+    draggableWindow.addEventListener('dragstart', e => e.preventDefault()); // no native drag image
+    draggableWindow.addEventListener('mousedown', startDragging);
+    document.addEventListener('mousemove', dragElement);
+    document.addEventListener('mouseup', stopDragging);
+
+    function startDragging(e) {
+    e.preventDefault();
+
+    // Get current on-screen position before changing styles
+    const rect = draggableWindow.getBoundingClientRect();
+
+    // Convert from centered (transform) to absolute pixel positioning
+    draggableWindow.style.left = rect.left + 'px';
+    draggableWindow.style.top  = rect.top  + 'px';
+    draggableWindow.style.transform = 'none'; // remove translate(-50%, -50%) during drag
+
+    // Store mouse offset inside the window
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+
+    isDragging = true;
+    draggableWindow.classList.add('dragging');
+    }
+
+    function dragElement(e) {
+    if (!isDragging) return;
+    e.preventDefault();
+
+    const x = e.clientX - offsetX;
+    const y = e.clientY - offsetY;
+
+    draggableWindow.style.left = x + 'px';
+    draggableWindow.style.top  = y + 'px';
+    }
+
+    function stopDragging() {
+    if (!isDragging) return;
+    isDragging = false;
+    draggableWindow.classList.remove('dragging');
+    }
+
+
+
     const grid = document.querySelector('#grid')
     //let cells = Array.from(document.querySelectorAll('.cell , .taken'))
     let cells = Array.from(grid.children);
@@ -65,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let nextRandom = 0;
     let timerID
     let score = 0;
+    
     
     //shapes
     const Lshape = [
@@ -156,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function freeze(){
 
         if (current.some(index => cells[currentPosition + index + width].classList.contains('taken'))){
+            //delay half second
             current.forEach(index => cells[currentPosition + index].classList.add('taken'))
             //start new shape
             random = nextRandom

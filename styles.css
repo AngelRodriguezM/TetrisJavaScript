@@ -50,8 +50,12 @@ body {
 }
 
 /*tetrisgame Window */
+
 .gamewindow {
-    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
     padding: 0.5%;
     padding-top: 0.35%;
     font-family: 'W95FA', sans-serif;
@@ -60,6 +64,13 @@ body {
     width: 90%;
     max-width: 500px;
 }
+
+.gamewindow .dragging
+{
+    cursor: grabbing;
+    user-select: none;
+}
+
 h1 {
     color: #ffffff;
     margin: 0;
