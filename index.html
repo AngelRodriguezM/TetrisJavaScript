@@ -12,19 +12,25 @@
     <div class="matrix"></div>
  
 
-    <section class="tetris-game">
+    <div class="tetris-game">
+        <div id="openTetrisApp" ><img src="./icons/TetrisAppIcon.png" alt="">
+            <p>Tetris</p>
+        </div>
         <div class="gamewindow" id="gamewindow">
             <div class="window-header">
                 <h1 class="game-title">Tetris</h1>
                 <div class="title-buttons">
                     <button class="titleBtn">_</button>
-                    <button class="titleBtn">X</button>
+                    <button class="titleBtn" class="close-Btn" id="closeBtn">X</button>
                     <div class="pause-overlay" id="pauseOverlay">Paused — press Start</div>
                 </div>
             </div>
 
             <h3>Score: <span id="score">0</span></h3>
-            <button id="start-button">Start/Pause</button>
+            <div class="start-button">
+
+                <button id="start-button">Start/Pause</button>
+            </div>
             <div class="grid-wrap">
                 <div id="grid"></div>
                 <script>
@@ -72,7 +78,7 @@
         </div>
 
 
-    </section>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

@@ -51,17 +51,34 @@ function countTo10() {
     console.log("counted successfully!")
 }
 
+
+
 //tetris --- tetris --- tetris --- tetris --- tetris --- tetris --- tetris --- tetris --- tetris --- tetris --- tetris --- tetris --- tetris --- tetris --- tetris
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
     
+    const closeBtn =  document.getElementById('closeBtn')
+    const appBtn = document.getElementById('openTetrisApp')
+    function closeWindow(){
+        draggableWindow.classList.add('closed')
+        clearInterval(timerID)
+        timerID=null
+        gameWindow.classList.add('paused');
+    }
+    function openWindow(){
+        draggableWindow.classList.remove('closed')
+        
+    }
+    appBtn.addEventListener('click', openWindow)
+    closeBtn.addEventListener('click', closeWindow)
+    
     // dragwindow
     const draggableWindow = document.getElementById('gamewindow');
     let offsetX = 0, offsetY = 0, isDragging = false;
 
-    draggableWindow.addEventListener('dragstart', e => e.preventDefault()); // no native drag image
+    draggableWindow.addEventListener('dragstart', e => e.preventDefault()); 
     draggableWindow.addEventListener('mousedown', startDragging);
     document.addEventListener('mousemove', dragElement);
     document.addEventListener('mouseup', stopDragging);
@@ -69,15 +86,15 @@ document.addEventListener('DOMContentLoaded', () => {
     function startDragging(e) {
     e.preventDefault();
 
-    // Get current on-screen position before changing styles
+    
     const rect = draggableWindow.getBoundingClientRect();
 
-    // Convert from centered (transform) to absolute pixel positioning
+    
     draggableWindow.style.left = rect.left + 'px';
     draggableWindow.style.top  = rect.top  + 'px';
-    draggableWindow.style.transform = 'none'; // remove translate(-50%, -50%) during drag
+    draggableWindow.style.transform = 'none'; 
 
-    // Store mouse offset inside the window
+    
     offsetX = e.clientX - rect.left;
     offsetY = e.clientY - rect.top;
 

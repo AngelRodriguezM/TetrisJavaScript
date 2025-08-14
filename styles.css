@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #000000;
+    background-color: #0ea678;
     background-image: none;
 }
 
@@ -48,6 +48,26 @@ body {
   mix-blend-mode: soft-light;           
                      
 }
+#openTetrisApp {
+    cursor: pointer;
+    margin: 10px 0 0 10px;
+    display: block;
+    color: #ffffff;
+    height: 50px;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+
+}
+#openTetrisApp img {
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    image-rendering: pixelated;
+}
+
 
 /*tetrisgame Window */
 
@@ -64,8 +84,15 @@ body {
     width: 90%;
     max-width: 500px;
 }
+.gamewindow.closed {
+    display: none !important;
+    border: none;
+    position: static;
+    padding: 0%;
+    padding-top: 0%;
+}
 
-.gamewindow .dragging
+.gamewindow.dragging
 {
     cursor: grabbing;
     user-select: none;
@@ -79,6 +106,7 @@ h1 {
     ;
 }
 .window-header{
+  
   display: flex;
   flex-wrap: nowrap;             /* evita salto de línea */
   align-items: center;
@@ -97,7 +125,7 @@ h1 {
   gap: 4px;
 }
 
-.titleBtn{
+.titleBtn, .close-Btn{
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -111,6 +139,7 @@ h1 {
   font-weight:bold;
   font-family: 'W95FA', sans-serif;
   text-align:center;
+  z-index: 10; /* above the grid */
   
 }
 
