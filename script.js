@@ -56,6 +56,7 @@ function countTo10() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    
     // dragwindow
     const draggableWindow = document.getElementById('gamewindow');
     let offsetX = 0, offsetY = 0, isDragging = false;
