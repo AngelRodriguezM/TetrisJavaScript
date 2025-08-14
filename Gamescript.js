@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlay    = document.getElementById('pauseOverlay');
 
 // show overlay before first start
-    gameWindow.classList.add('prestart');
+    gameWindow.classList.add('prestart', 'closed');
     overlay.textContent = 'Press Start to play';
 
     StartBtn.addEventListener('click', () => {

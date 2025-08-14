@@ -258,6 +258,46 @@ h1 {
     display: none;
 }
 
+.taskbar-wrap {
+    position: absolute;
+    background-color: #b1b1b1;
+    bottom: 0;
+    display: flex;
+    justify-self: bottom;
+    height: 50px;
+    width: 99%;
+    border-left: solid 2px #ffffff9d;
+    border-right: solid 1px #454545;
+    border-bottom: solid 1px #454545;
+    border-top: solid 1px #ffffff9d;
+    margin: 0 auto;
+    padding: 0;
+    z-index: 98;
+}
+.taskbar {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+.windowsBtn{
+   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+    background:#C0C0C0;
+  border-width:1px;
+  border-color:#FFFFFF #808080 #808080 #FFFFFF;
+  padding:0;
+  font-size:17px;
+  font-weight:bold;
+  font-family: 'W95FA', sans-serif;
+  text-align:center;
+  padding-right: 5px;
+
+
+}
+
 @media (max-width: 768px) {
     .mini-grid-wrap{
     z-index: 1;
@@ -325,10 +365,13 @@ h1 {
     #leftArrow{
         image-rendering: pixelated;
         /* Windows 95 style */
-        background: #C0C0C0;
-        border-width: 1px;
-        border-style: solid;
-        border-color: #FFFFFF #808080 #808080 #FFFFFF;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+            background:#C0C0C0;
+        border-width:1px;
+        border-color:#FFFFFF #808080 #808080 #FFFFFF;
+        padding:0;
 
         /* Size control */
         width: 30px;   /* adjust this */
@@ -338,10 +381,13 @@ h1 {
     #rightArrow{
         image-rendering: pixelated;
         /* Windows 95 style */
-        background: #C0C0C0;
-        border-width: 1px;
-        border-style: solid;
-        border-color: #FFFFFF #808080 #808080 #FFFFFF;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+            background:#C0C0C0;
+        border-width:1px;
+        border-color:#FFFFFF #808080 #808080 #FFFFFF;
+        padding:0;
 
         /* Size control */
         width: 30px;   /* adjust this */
@@ -352,10 +398,13 @@ h1 {
         image-rendering: pixelated;
         
         /* Windows 95 style */
-        background: #C0C0C0;
-        border-width: 1px;
-        border-style: solid;
-        border-color: #FFFFFF #808080 #808080 #FFFFFF;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+            background:#C0C0C0;
+        border-width:1px;
+        border-color:#FFFFFF #808080 #808080 #FFFFFF;
+        padding:0;
 
         /* Size control */
         width: 30px;   /* adjust this */
@@ -365,10 +414,13 @@ h1 {
     #rotateBtn{
         image-rendering: pixelated;
         /* Windows 95 style */
-        background: #C0C0C0;
-        border-width: 1px;
-        border-style: solid;
-        border-color: #FFFFFF #808080 #808080 #FFFFFF;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+            background:#C0C0C0;
+        border-width:1px;
+        border-color:#FFFFFF #808080 #808080 #FFFFFF;
+        padding:0;
 
         /* Size control */
         width: 30px;   /* adjust this */
@@ -379,4 +431,8 @@ h1 {
     #leftArrow  img { transform: rotate(-90deg); }
     #rightArrow img { transform: rotate(90deg);   }
     #downArrow  img { transform: rotate(180deg);  }
+
+    .taskbar-wrap{
+        width: 95%;
+    }
 }
